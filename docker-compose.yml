@@ -1,0 +1,14 @@
+version: '3'
+services:
+  toneitaadmindev:
+    build:
+      context: .
+    container_name: toneitaadmindev
+    restart: unless-stopped
+    volumes:
+       - .:/var/www/html/toneitaadmindev
+    networks:
+      - nginxproxy_nginx_proxy
+networks:
+    nginxproxy_nginx_proxy:
+      external: true
